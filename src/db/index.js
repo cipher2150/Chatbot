@@ -1,11 +1,15 @@
-import mongoose, { connect, mongo } from "mongoose"
+const mongoose = require("mongoose");
+const { connect, mongo } = mongoose;
+
 import { DB_NAME } from "../constants.js"
 
 
 const connectDB = async () => {
     try {
-       const connectionInstnce = await mongoose.connect(`${process.env.MONGODB_URI}/${DB_NAME}`);
-       console.log(`\n MongoDB connected !! DB Host: ${connectionInstnce.connection.host}`);
+       const connectionInstance = await mongoose.connect
+       (`${process.env.MONGODB_URI}/${DB_NAME}`);
+       console.log(`\n MongoDB connected !! DB Host: $
+        {connectionInstnce.connection.host}`);
     } catch (error) {
         console.log("MongoDB connection error ", error);
         process.exit(1);
